@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}
+   {{ super() }} - {{ title }}
+{% endblock %}
+{% block content %}
+    <h2>{{ title }}</h2>
+    {% for item, value in data.items() %}
+        <li><a href="/Catalog/{{ item }}">{{ item }}</a></li>
+        {% for val in value %}
+            <li style="margin-left: 20px"><a href="/Catalog">{{ val }}</a></li>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
